@@ -22,9 +22,9 @@ sudo apt-get install gcc g++ libboost-all-dev cmake autoconf automake qt5-defaul
  libreadline6-dev libgmp-dev zip unzip nodejs python3 vim sysstat libssl-dev
 
 echo -e "${GRN}|=== Creating user 'frog' ...                                                 |${NC}"
-sudo adduser --disabled-password --gecos "" frog
-sudo mkdir -p /home/frog/project
-sudo mkdir -p /home/frog/wallet/steem
+sudo adduser --disabled-password --gecos "" frog || echo "User already exists."
+sudo mkdir -p /home/frog/project || echo "project folder already exists."
+sudo mkdir -p /home/frog/wallet/steem || echo "steem folder already exists."
 sudo chown -R frog:frog /home/frog
 
 echo -e "${GRN}|=== Cloning 'bullfrog-system' project ...                                    |${NC}"
